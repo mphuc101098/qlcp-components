@@ -1,3 +1,5 @@
+console.log("xasdasbdakjsdbkasbdasbda");
+
 new Vue({
   el: '#xxx-test-p',
   template: `<h1>xxx-test-p ne</h1>`,
