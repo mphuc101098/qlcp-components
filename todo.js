@@ -75,6 +75,7 @@ Vue.component('todo-list', {
 Vue.component('todo-app', {
   template: `
     <div class="todo-container">
+      <h1>This is a Todo App Demo</h1>
       <h2>Todo List</h2>
 
       <todo-form @add-todo="addTodo"></todo-form>
