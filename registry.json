@@ -1,4 +1,5 @@
 {
   "phuc-test": "components/phuc-test.js",
-  "todo-app": "components/todo.js"
+  "todo-app": "components/todo.js",
+  "com31": "components/com31.js"
 }
