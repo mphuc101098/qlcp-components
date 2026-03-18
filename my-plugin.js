@@ -7,6 +7,8 @@
   const CDN_BASE =
     "https://cdn.jsdelivr.net/gh/mphuc101098/qlcp-components@main/";
 
+  console.log({IMPORT_COMPONENTS, CDN_BASE});
+
   function loadScript(url) {
     return new Promise((resolve) => {
       const s = document.createElement("script");
