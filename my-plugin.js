@@ -5,7 +5,7 @@
   ];
 
   const CDN_BASE =
-    "https://raw.githubusercontent.com/mphuc101098/qlcp-components/refs/heads/main/";
+    "https://gh.lhu.edu.vn/mphuc101098/qlcp-components/main/";
 
 
   function loadScript(url) {
