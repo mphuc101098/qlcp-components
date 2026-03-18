@@ -1,6 +1,7 @@
 
   const IMPORT_COMPONENTS = [
     // "phuc-test",
+    "com31",
     "todo-app"
   ];
 
