@@ -1,3 +1,5 @@
+(function () {
+
 // TodoForm
 Vue.component('todo-form', {
   template: `
@@ -115,3 +117,5 @@ Vue.component('todo-app', {
     }
   }
 })
+
+ })()
