@@ -5,7 +5,7 @@
   ];
 
   const CDN_BASE =
-    "https://cdn.jsdelivr.net/gh/mphuc101098/qlcp-components@main/";
+    "https://gh.lhu.edu.vn/mphuc101098/qlcp-components/main/";
 
 
   function loadScript(url) {
