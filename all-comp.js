@@ -6,7 +6,7 @@ app.component('out-app', {
     template: `<div>{{ email }}</div>`,
     data(){
         return {
-            email: vueData.user.Email
+            email: 'vueData.user.Email'
         }
     }
 })
