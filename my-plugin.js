@@ -1,4 +1,8 @@
 (function () {
+  const IMPORT_COMPONENTS = [
+    "phuc-test",
+    "todo-app"
+  ];
 
   const CDN_BASE =
     "https://cdn.jsdelivr.net/gh/mphuc101098/qlcp-components@main/";
@@ -17,7 +21,7 @@
     const registry = await fetch(CDN_BASE + "registry.json")
       .then(r => r.json());
 
-    const required = window.IMPORT_COMPONENTS || [];
+    const required = IMPORT_COMPONENTS || [];
 
     for (let name of required) {
 
