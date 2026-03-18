@@ -3,5 +3,10 @@ app.component('te-le-le', {
 });
 
 app.component('out-app', {
-    template: `<div>{{JSON.stringify(window.vueData)}}</div>`
+    template: `<div>{{ email }}</div>`,
+    data(){
+        return {
+            email: vueData.user.Email
+        }
+    }
 })
