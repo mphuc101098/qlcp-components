@@ -14,7 +14,7 @@
       const s = document.createElement("script");
       s.src = url;
       s.onload = resolve;
-      document.head.appendChild(s);
+      document.body.appendChild(s);
     });
   }
 
