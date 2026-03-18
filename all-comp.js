@@ -3,5 +3,5 @@ app.component('te-le-le', {
 });
 
 app.component('out-app', {
-    template: `<div>{{JSON.stringtify(window.vueData)}}</div>`
+    template: `<div>{{JSON.stringify(window.vueData)}}</div>`
 })
