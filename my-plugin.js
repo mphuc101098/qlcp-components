@@ -1,4 +1,4 @@
-  console.log("hello my plugin");
+
   const IMPORT_COMPONENTS = [
     "phuc-test",
     "todo-app"
@@ -7,7 +7,6 @@
   const CDN_BASE =
     "https://cdn.jsdelivr.net/gh/mphuc101098/qlcp-components@main/";
 
-  console.log({IMPORT_COMPONENTS, CDN_BASE});
 
   function loadScript(url) {
     return new Promise((resolve) => {
