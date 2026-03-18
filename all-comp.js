@@ -2,6 +2,7 @@ app.component('te-le-le', {
     props: ['data', 'ttt'],
     template: `<div><div>Hello from te-le-le </div>
         <div>{{ ttt }}</div>
+        <div>{{ JSON.stringify(data) }}</div>
     </div>`
 });
 
