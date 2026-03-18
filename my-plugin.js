@@ -1,4 +1,4 @@
-(function () {
+  console.log("hello my plugin");
   const IMPORT_COMPONENTS = [
     "phuc-test",
     "todo-app"
@@ -44,4 +44,4 @@
 
   loadComponents();
 
-})();
+
