@@ -1,4 +1,4 @@
-name: Upload changed components files to RustFS
+name: Upload changed components files to S3
 
 on:
   push:
