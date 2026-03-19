@@ -14,13 +14,16 @@ app.component('out-app', {
     template: `
     <div>
         <div>{{ email }}</div>
-        <div>{{ user.email }}</div>
+        <div>{{ user.name }} - {{ user.email }}</div>
     </div>
     `,
     data() {
         return {
             email: 'vueData.user.Email',
-            user: fuckData.user ?? { name: "xxx", email: 'yyy' }
+            user: fuckData?.user ? {name: fuckData?.user?.UserName, email: fuckData?.user?.Email } : { name: "xxx", email: 'yyy' }
         }
+    },
+    created(){
+        console.log("created: ", fuckData.user)
     }
 })
