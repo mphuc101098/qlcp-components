@@ -1,1 +1,1 @@
-console.log('welcome to tick')
+console.log('welcome to tick tok')
