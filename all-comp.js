@@ -1,3 +1,7 @@
+let fuckData = vueData;
+
+console.log("fuck data: ", fuckData);
+
 app.component('te-le-le', {
     props: ['data', 'ttt'],
     template: `<div><div>Hello from te-le-le </div>
