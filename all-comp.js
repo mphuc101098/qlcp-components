@@ -6,6 +6,11 @@ app.component('te-le-le', {
     props: ['data', 'ttt'],
     template: `<div><div>Hello from te-le-le </div>
         <div>{{ ttt }}</div>
+        <ul>
+            <li v-for="item in data" :key="item.STT">
+                {{ JSON.stringify(item) }}
+            </li>
+        </ul>
         <div>{{ JSON.stringify(data) }}</div>
     </div>`
 });
