@@ -16,7 +16,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_KEY }}
       AWS_DEFAULT_REGION: us-east-1
       S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
-      S3_BUCKET: ${{ github.event.repository.name }}
+      S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
 
     steps:
       - name: Checkout code
@@ -33,36 +33,6 @@ jobs:
             sudo ./aws/install
           fi
           aws --version
-
-      - name: Prepare bucket name
-        id: bucket
-        shell: bash
-        run: |
-          set -e
-
-          REPO_NAME="${{ github.event.repository.name }}"
-          BUCKET_NAME=$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')
-
-          echo "Repository name : $REPO_NAME"
-          echo "Bucket name     : $BUCKET_NAME"
-
-          echo "bucket_name=$BUCKET_NAME" >> "$GITHUB_OUTPUT"
-
-      - name: Create bucket if not exists
-        shell: bash
-        run: |
-          set -e
-
-          if aws s3api head-bucket \
-            --bucket "$S3_BUCKET" \
-            --endpoint-url "$S3_ENDPOINT" 2>/dev/null; then
-            echo "Bucket $S3_BUCKET already exists"
-          else
-            echo "Creating bucket $S3_BUCKET"
-            aws s3api create-bucket \
-              --bucket "$S3_BUCKET" \
-              --endpoint-url "$S3_ENDPOINT"
-          fi
 
       - name: Find changed files in components
         id: changed
@@ -102,8 +72,6 @@ jobs:
         run: |
           set -e
 
-          BUCKET_NAME="${{ steps.bucket.outputs.bucket_name }}"
-
           while IFS= read -r file; do
             [ -f "$file" ] || continue
 
@@ -126,10 +94,12 @@ jobs:
                 ;;
             esac
 
-            echo "Uploading: $file -> s3://$BUCKET_NAME/$file (Content-Type: $content_type)"
+            echo "Uploading: $file -> s3://$S3_BUCKET/$file (Content-Type: $content_type)"
 
-            aws s3 cp "$file" "s3://$BUCKET_NAME/$file" \
+            aws s3 cp "$file" "s3://$S3_BUCKET/$file" \
               --endpoint-url "$S3_ENDPOINT" \
               --content-type "$content_type" \
+              --cache-control "no-cache, no-store, must-revalidate" \
+              --expires "0" \
               --only-show-errors
           done < changed_files.txt
