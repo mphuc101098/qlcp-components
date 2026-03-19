@@ -20,7 +20,7 @@ app.component('out-app', {
     data() {
         return {
             email: 'vueData.user.Email',
-            user: fuckData?.user ? {name: fuckData?.user?.UserName, email: fuckData?.user?.Email } : { name: "xxx", email: 'yyy' }
+            user: fuckData?.user?.UserID ? {name: fuckData?.user?.UserName, email: fuckData?.user?.Email } : { name: "xxx", email: 'yyy' }
         }
     },
     created(){
