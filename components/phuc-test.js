@@ -3,7 +3,7 @@
     Vue.component('phuc-test', {
         template: `
     <div style="border:1px solid #ccc;padding:10px">
-        <h2>Phuc Test Component update di</h2>
+        <h2>Phuc Test Component update di asdas đá</h2>
         <div>{{ message }}</div>
     </div>
   `,
