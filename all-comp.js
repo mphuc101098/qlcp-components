@@ -11,10 +11,16 @@ app.component('te-le-le', {
 });
 
 app.component('out-app', {
-    template: `<div>{{ email }}</div>`,
+    template: `
+    <div>
+        <div>{{ email }}</div>
+        <div>{{ user.email }}</div>
+    </div>
+    `,
     data() {
         return {
-            email: 'vueData.user.Email'
+            email: 'vueData.user.Email',
+            user: fuckData.user ?? { name: "xxx", email: 'yyy' }
         }
     }
 })
