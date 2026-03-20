@@ -8,7 +8,7 @@ Vue.component('todo-form', {
         v-model="newTodo"
         @keyup.enter="submitTodo"
         type="text"
-        placeholder="Nhập công việc..."
+        placeholder="Nhập công việc của mày vào đi..."
       />
       <button @click="submitTodo">Thêm</button>
     </div>
